@@ -416,6 +416,48 @@
       </p>
     </footer>
     <!-- footer section -->
+<link rel="stylesheet" href="static/css/APlayer.min.css">
+<script src="static/js/APlayer.min.js"></script>
+ 
+<div id='aplayer'></div>
+ 
+<script>
+    var ap = new APlayer
+    ({
+        element: document.getElementById('aplayer'),
+        showlrc: false,
+        fixed: true,
+        mini: true,
+        audio: [
+        	{
+                title: '半岛铁盒',
+                author: '半岛铁盒',
+                url: 'static/music/周杰伦-半岛铁盒.mp3',
+                pic: 'static/music/周杰伦-半岛铁盒-mp3-image.webp'
+        	},
+            {
+                title: 'minecraft',
+                author: 'minecraft',
+                url: 'static/music/minecraft.mp3',
+                pic: 'static/music/minecraft.webp'
+            },
+            {
+            title: 'minecraft',
+                author: 'cat',
+                url: 'static/music/cat.aac',
+                pic: 'static/music/minecraft.webp'
+            },
+            {
+              title: 'minecraft',
+                author: 'alone',
+                url: 'static/music/alone.mp3',
+                pic: 'static/music/alone.webp'
+            }
+		]
+ 
+    });
+    ap.init();
+</script>
 
 
   </body>
