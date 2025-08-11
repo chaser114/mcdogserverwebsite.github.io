@@ -69,9 +69,11 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-image: url(../image/hero-bg.webp);
+  /* 背景图已替换为HTML中的img标签 */
   background-size: cover;
   background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
 }
 
 .sub_page .hero_area {
@@ -157,7 +159,7 @@ a:focus {
 }
 
 .custom_nav-container .nav_search-btn {
-  background-image: url(../image/search-icon.webp);
+  /* 背景图已替换为HTML中的img标签 */
   background-size: 22px;
   background-repeat: no-repeat;
   background-position-y: 7px;
@@ -196,7 +198,7 @@ a:focus {
 }
 
 .custom_nav-container .navbar-toggler .navbar-toggler-icon {
-  background-image: url(../image/menu.webp);
+  /* 背景图已替换为HTML中的img标签 */
   background-size: 55px;
 }
 
@@ -296,10 +298,12 @@ a:focus {
 }
 
 .us_section {
-  background-image: url(../image/us-bg.webp);
+  /* 背景图已替换为HTML中的img标签 */
   background-size: cover;
   background-attachment: fixed;
   color: #ffffff;
+  position: relative;
+  overflow: hidden;
 }
 
 .us_section .us_container {
@@ -336,18 +340,22 @@ a:focus {
 
 .us_section .us_container .box .img-box img {
   max-width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
-.us_section .us_container .box .detail-box h5 {
-  font-weight: bold;
+.us_section .us_container .box .img-box img.loaded {
+  opacity: 1;
 }
 
 .heathy_section {
-  background-image: url(../image/healthy-bg.webp);
+  /* 背景图已替换为HTML中的img标签 */
   background-size: cover;
   background-attachment: fixed;
   color: #ffffff;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .heathy_section h2 {
@@ -389,10 +397,12 @@ a:focus {
 }
 
 .trainer_section {
-  background-image: url(../image/trainer-bg.webp);
+  /* 背景图已替换为HTML中的img标签 */
   background-size: cover;
   background-attachment: fixed;
   color: #ffffff;
+  position: relative;
+  overflow: hidden;
 }
 
 .trainer_section .box {
@@ -418,10 +428,17 @@ a:focus {
 .trainer_section .box .img-box {
   border-radius: 15px;
   overflow: hidden;
+  position: relative;
 }
 
 .trainer_section .box .img-box img {
   width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.trainer_section .box .img-box img.loaded {
+  opacity: 1;
 }
 
 .trainer_section .box .social_box {
@@ -465,6 +482,12 @@ a:focus {
 
 .contact_section .img-box img {
   width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.contact_section .img-box img.loaded {
+  opacity: 1;
 }
 
 .contact_section .form_container {
@@ -551,6 +574,23 @@ a:focus {
   border-radius: 100%;
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.info_items .item .img-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.info_items .item .img-box img.loaded {
+  opacity: 1;
 }
 
 .info_items .item .detail-box {
@@ -566,7 +606,8 @@ a:focus {
   position: relative;
 }
 
-.info_items .item .img-box.box-1 {
+/* 移除背景图定义 - 已替换为img标签 */
+/*.info_items .item .img-box.box-1 {
   background-image: url(../image/server.webp);
 }
 
@@ -576,7 +617,7 @@ a:focus {
 
 .info_items .item .img-box.box-3 {
   background-image: url(../image/Web.webp);
-}
+}*/
 
 /* footer section*/
 .footer_section {
@@ -598,6 +639,34 @@ a:focus {
 
 .footer_section a {
   color: #292929;
+}
+
+/* 添加懒加载过渡效果 */
+.bg-lazy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+}
+
+.bg-lazy.loaded {
+  opacity: 1;
+}
+
+/* 背景图容器 */
+.bg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #f0f0f0; /* 占位背景色 */
 }
 
 /* end footer section*/
