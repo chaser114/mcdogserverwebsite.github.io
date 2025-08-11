@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
   <head>
     <!-- Basic -->
     <meta charset="utf-8">
@@ -12,6 +12,10 @@
 
     <title>mcdogserver团队 | mcdogserver</title>
 
+    <!-- 预加载关键CSS -->
+    <link rel="preload" href="static/css/bootstrap.css" as="style">
+    <link rel="preload" href="static/css/style.css" as="style">
+    
     <!-- slider stylesheet -->
     <link rel="stylesheet" type="text/css" href="static/css/owl.carousel.min.css">
 
@@ -30,6 +34,7 @@
       img[loading="lazy"] {
         opacity: 0;
         transition: opacity 0.3s ease;
+        will-change: opacity;
       }
       img[loading="lazy"].loaded {
         opacity: 1;
@@ -51,10 +56,49 @@
         height: 100%;
         object-fit: cover;
       }
+      
+      /* 添加背景容器 */
+      .bg-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+      }
+      
+      .bg-lazy {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        will-change: opacity;
+      }
+      
+      .bg-lazy.loaded {
+        opacity: 1;
+      }
+      
+      /* 确保内容在背景之上 */
+      .hero_area,
+      .us_section,
+      .trainer_section {
+        position: relative;
+      }
     </style>
   </head>
 
   <body>
+    <!-- 添加主要背景图容器 -->
+    <div class="bg-container">
+      <img src="static/picture/hero-bg.webp" alt="背景" class="bg-lazy" loading="lazy">
+    </div>
+    
     <div class="hero_area">
       <!-- header section strats -->
       <header class="header_section">
@@ -218,7 +262,11 @@
     </div>
 
     <!-- Us section -->
-
+    <!-- 添加背景容器 -->
+    <div class="bg-container">
+      <img src="static/picture/us-bg.webp" alt="背景" class="bg-lazy" loading="lazy">
+    </div>
+    
     <section class="us_section layout_padding">
       <div class="container">
         <div class="heading_container">
@@ -282,15 +330,18 @@
           </div>
         </div>
       </div>
-    
+    </section>
 
     <!-- trainer section -->
-
+    <!-- 添加背景容器 -->
+    <div class="bg-container">
+      <img src="static/picture/trainer-bg.webp" alt="背景" class="bg-lazy" loading="lazy">
+    </div>
+    
     <section class="trainer_section layout_padding">
       <div class="container">
         <div class="heading_container">
           <h2>我们的团队</h2>
-		  
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mx-auto">
@@ -309,32 +360,32 @@
                 <h5>worldcctv48</h5>
               </div>
               <div class="img-box">
-		<img src="static/picture/worldcctv48.webp" alt="worldcctv48" loading="lazy" onclick="window.location.href='https://thewhitely.mcdogserver.top/';">
-		
+                <img src="static/picture/worldcctv48.webp" alt="worldcctv48" loading="lazy" onclick="window.location.href='https://thewhitely.mcdogserver.top/';">
              </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 mx-auto">
             <div class="box">
-            <div class="name">
-              <h5>tolesam</h5>
+              <div class="name">
+                <h5>tolesam</h5>
+              </div>
+              <div class="img-box">
+                <img src="static/picture/tolesam.webp" alt="tolesam" loading="lazy" onclick="window.location.href='https://tolesam.mcdogserver.top/';">
+             </div>
             </div>
-            <div class="img-box">
-              <img src="static/picture/tolesam.webp" alt="tolesam" loading="lazy" onclick="window.location.href='https://tolesam.mcdogserver.top/';">
-           </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mx-auto">
+            <div class="box">
+              <div class="name">
+                <h5>xylophone</h5>
+              </div>
+              <div class="img-box">
+                <img src="static/picture/xylophone.webp" alt="xylophone" loading="lazy">
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-lg-4 col-md-6 mx-auto">
-      <div class="box">
-      <div class="name">
-        <h5>xylophone</h5>
-      </div>
-      <div class="img-box">
-        <img src="static/picture/xylophone.webp" alt="xylophone" loading="lazy">
-    </div>
-   </div>
     </section>
 
     <!-- end trainer section -->
@@ -358,11 +409,9 @@
                 <h2>加入我们</h2>
               </div>
               <div class="contact_box">
-                
-               
                 <a href="https://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=4BOH3Fg3Fjub6Sh7TKn-vsKkg2eyQjl_&authKey=HhWMVOFFvsxz9dDbNEfDPtyUvS%2BZ6E%2FiCSpZ7JLfsY2SBQe8eVToud%2FS3Eaz9lRW&noverify=0&group_code=702894538" target="_blank"><button>加入Q群</button></a>
                 <a href="https://easylink.cc/j673hk" target="_blank"><button>下载客户端</button></a>
-                <a href="https://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=4BOH3Fg3Fjub6Sh7TKn-vsKkg2eyQjl_&authKey=HhWMVOFFvsxz9dDbNEfDPtyUvS%2BZ6E%2FiCSpZ7JLfsY2SBQe8eVToud%2FS3Eaz9lRW&noverify=0&group_code=702894538" target="_blank" target="_blank"><button>有外挂？进群举报</button></a>
+                <a href="https://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=4BOH3Fg3Fjub6Sh7TKn-vsKkg2eyQjl_&authKey=HhWMVOFFvsxz9dDbNEfDPtyUvS%2BZ6E%2FiCSpZ7JLfsY2SBQe8eVToud%2FS3Eaz9lRW&noverify=0&group_code=702894538" target="_blank"><button>有外挂？进群举报</button></a>
               </div>
             </div>
           </div>
@@ -418,68 +467,90 @@
     <!-- footer section -->
     <footer class="container-fluid footer_section">
       <p>
-        <a href="https://icp.mcsite.cc/mc/0000000010.html " title="MCICP备0000000010号" target="_blank">MCICP备0000000010号</a >
-          <span id="span"></span>
-<script type="text/javascript">
-    function runtime(){
-        // 初始时间，日/月/年 时:分:秒
-        X = new Date("04/14/2024 00:00:00");
-        Y = new Date();
-        T = (Y.getTime()-X.getTime());
-        M = 24*60*60*1000;
-        a = T/M;
-        A = Math.floor(a);
-        b = (a-A)*24;
-        B = Math.floor(b);
-        c = (b-B)*60;
-        C = Math.floor((b-B)*60);
-        D = Math.floor((c-C)*60);
-        //信息写入到DIV中
-        span.innerHTML = "本网站己运行: "+A+"天"+B+"小时"+C+"分"+D+"秒"
-    }
-    setInterval(runtime, 1000);
-</script> 
+        <a href="https://icp.mcsite.cc/mc/0000000010.html" title="MCICP备0000000010号" target="_blank">MCICP备0000000010号</a>
+        <span id="span"></span>
       </p>
       <p>
-        友情链接:<a href="https://www.locyanfrp.cn/" data-type="link" data-id="https://www.locyanfrp.cn/" target="_blank" rel="noreferrer noopener">乐青映射</a>
+        友情链接:<a href="https://www.locyanfrp.cn/" target="_blank" rel="noreferrer noopener">乐青映射</a>
       </p>
-      <p>
-      
-      </p>
+      <script>
+        function runtime(){
+          const startDate = new Date("2024-04-14T00:00:00");
+          const now = new Date();
+          const diff = now - startDate;
+          
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+          
+          document.getElementById('span').innerText = `本网站已运行: ${days}天${hours}小时${minutes}分${seconds}秒`;
+        }
+        setInterval(runtime, 1000);
+        runtime(); // 立即执行一次
+      </script> 
     </footer>
     <!-- footer section -->
-   <link rel="stylesheet" href="static/css/APlayer.min.css">
-<script src="static/js/APlayer.min.js"></script>
-<script src="static/js/Meting.min.js"></script>
-<meting-js
-server="netease"
-type="playlist"
-id="12750073701"
-fixed="true">
-</meting-js>
-
-<script>
-  // 图片加载完成后添加loaded类
-  document.addEventListener('DOMContentLoaded', function() {
-    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
     
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.classList.add('loaded');
-          observer.unobserve(img);
+    <!-- 音乐播放器 -->
+    <link rel="stylesheet" href="static/css/APlayer.min.css">
+    <script src="static/js/APlayer.min.js" defer></script>
+    <script src="static/js/Meting.min.js" defer></script>
+    <meting-js
+      server="netease"
+      type="playlist"
+      id="12750073701"
+      fixed="true"
+      theme="#ff2953"
+      defer>
+    </meting-js>
+
+    <script>
+      // 图片加载完成后添加loaded类
+      document.addEventListener('DOMContentLoaded', function() {
+        // 处理所有懒加载图片
+        const lazyImages = document.querySelectorAll('img[loading="lazy"], .bg-lazy');
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              // 确保图片加载完成后再显示
+              if (img.complete) {
+                img.classList.add('loaded');
+              } else {
+                img.addEventListener('load', function() {
+                  img.classList.add('loaded');
+                });
+              }
+              observer.unobserve(img);
+            }
+          });
+        }, {
+          rootMargin: '0px 0px 200px 0px' // 提前200px加载
+        });
+        
+        lazyImages.forEach(img => {
+          observer.observe(img);
+          
+          // 如果图片已经在缓存中，立即显示
+          if (img.complete) {
+            img.classList.add('loaded');
+          }
+        });
+        
+        // 修复团队布局问题
+        const teamContainer = document.querySelector('.trainer_section .row');
+        if (teamContainer) {
+          const boxes = teamContainer.querySelectorAll('.box');
+          if (boxes.length > 0) {
+            boxes.forEach(box => {
+              box.parentElement.classList.remove('col-lg-4', 'col-md-6');
+              box.parentElement.classList.add('col-lg-3', 'col-md-6');
+            });
+          }
         }
       });
-    }, {
-      rootMargin: '0px 0px 100px 0px' // 提前100px加载
-    });
-    
-    lazyImages.forEach(img => {
-      observer.observe(img);
-    });
-  });
-</script>
-
+    </script>
   </body>
 </html>
