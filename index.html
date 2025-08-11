@@ -7,7 +7,7 @@
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Site Metas -->
-    <link rel="shortcut icon" href="static/picture/icon.webp"> 
+    <link rel="shortcut icon" href="static/picture/icon.webp" loading="lazy"> 
     <meta name="google-adsense-account" content="ca-pub-1444555594148382">
 
     <title>mcdogserver团队 | mcdogserver</title>
@@ -24,6 +24,34 @@
     <link href="static/css/style.css" rel="stylesheet">
     <!-- responsive style -->
     <link href="static/css/responsive.css" rel="stylesheet">
+    
+    <style>
+      /* 为所有图片添加平滑过渡效果 */
+      img[loading="lazy"] {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      img[loading="lazy"].loaded {
+        opacity: 1;
+      }
+      
+      /* 背景图容器样式 */
+      .bg-img-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: #f0f0f0; /* 占位背景色 */
+      }
+      
+      .bg-img-container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
   </head>
 
   <body>
@@ -33,7 +61,7 @@
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container">
             <a class="navbar-brand" href="#">
-              <img src="static/picture/icon.webp" alt="some_text" width="100" height="100">
+              <img src="static/picture/icon.webp" alt="mcdogserver logo" width="100" height="100" loading="lazy">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -99,8 +127,8 @@
                       <h2>1.9-1.21</h2>
                       
                       <p>
-                        Minecraft这个名字的意思是“采矿业”或“采矿贸易”，最初让玩家扮演中世纪幻想世界中的职业采矿大师的角色。
-                        游戏编程的第一天有洞穴，工作名称是“洞穴游戏”，不久之后Minecraft这个名字就出现了。
+                        Minecraft这个名字的意思是"采矿业"或"采矿贸易"，最初让玩家扮演中世纪幻想世界中的职业采矿大师的角色。
+                        游戏编程的第一天有洞穴，工作名称是"洞穴游戏"，不久之后Minecraft这个名字就出现了。
                       </p>
                       <div class="">
                         <a href="#">MC.MOJABG.COM:25565</a>
@@ -202,7 +230,7 @@
             <div class="col-lg-3 col-md-6">
               <div class="box">
                 <div class="img-box">
-                  <img src="static/picture/u-1.webp" alt="">
+                  <img src="static/picture/u-1.webp" alt="功能图标" loading="lazy">
                 </div>
                 <div class="detail-box">
                   <h5>功能</h5>
@@ -215,7 +243,7 @@
             <div class="col-lg-3 col-md-6">
               <div class="box">
                 <div class="img-box">
-                  <img src="static/picture/u-4.webp" alt="">
+                  <img src="static/picture/u-4.webp" alt="民主图标" loading="lazy">
                 </div>
                 <div class="detail-box">
                   <h5>民主</h5>
@@ -228,7 +256,7 @@
             <div class="col-lg-3 col-md-6">
               <div class="box">
                 <div class="img-box">
-                  <img src="static/picture/u-2.webp" alt="">
+                  <img src="static/picture/u-2.webp" alt="管理图标" loading="lazy">
                 </div>
                 <div class="detail-box">
                   <h5>管理</h5>
@@ -241,7 +269,7 @@
             <div class="col-lg-3 col-md-6">
               <div class="box">
                 <div class="img-box">
-                  <img src="static/picture/u-3.webp" alt="">
+                  <img src="static/picture/u-3.webp" alt="安全图标" loading="lazy">
                 </div>
                 <div class="detail-box">
                   <h5>安全</h5>
@@ -271,7 +299,7 @@
                 <h5>louis</h5>
               </div>
               <div class="img-box">
-                <img src="static/picture/louis.webp" alt="" onclick="window.location.href='https://louis.mcdogserver.top/';">
+                <img src="static/picture/louis.webp" alt="louis" loading="lazy" onclick="window.location.href='https://louis.mcdogserver.top/';">
              </div>
             </div>
           </div>
@@ -281,7 +309,7 @@
                 <h5>worldcctv48</h5>
               </div>
               <div class="img-box">
-		<img src="static/picture/worldcctv48.webp" alt="" onclick="window.location.href='https://thewhitely.mcdogserver.top/';">
+		<img src="static/picture/worldcctv48.webp" alt="worldcctv48" loading="lazy" onclick="window.location.href='https://thewhitely.mcdogserver.top/';">
 		
              </div>
             </div>
@@ -292,13 +320,11 @@
               <h5>tolesam</h5>
             </div>
             <div class="img-box">
-              <img src="static/picture/tolesam.webp" alt="" onclick="window.location.href='https://tolesam.mcdogserver.top/';">
+              <img src="static/picture/tolesam.webp" alt="tolesam" loading="lazy" onclick="window.location.href='https://tolesam.mcdogserver.top/';">
            </div>
           </div>
         </div>
       </div>
-    </div>
-   
     </div>
     <div class="col-lg-4 col-md-6 mx-auto">
       <div class="box">
@@ -306,7 +332,7 @@
         <h5>xylophone</h5>
       </div>
       <div class="img-box">
-        <img src="static/picture/xylophone.webp" alt="">
+        <img src="static/picture/xylophone.webp" alt="xylophone" loading="lazy">
     </div>
    </div>
     </section>
@@ -320,7 +346,10 @@
         <div class="row">
           <div class="col-md-6 px-0">
             <div class="img-box">
-              <img src="static/picture/contact-img.webp" alt="">
+              <!-- 将背景图替换为img标签实现懒加载 -->
+              <div class="bg-img-container">
+                <img src="static/picture/contact-img.webp" alt="联系我们" loading="lazy">
+              </div>
             </div>
           </div>
           <div class="col-lg-5 col-md-6">
@@ -349,7 +378,10 @@
         <div class="info_items">
           <a href="#">
             <div class="item">
-              <div class="img-box box-1"></div>
+              <!-- 将背景图替换为img标签实现懒加载 -->
+              <div class="bg-img-container">
+                <img src="static/picture/location-white.webp" alt="位置图标" loading="lazy">
+              </div>
               <div class="detail-box">
                 <p>IP：mc.mcdogserver.top</p>
               </div>
@@ -357,7 +389,10 @@
           </a>
           <a href="https://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=4BOH3Fg3Fjub6Sh7TKn-vsKkg2eyQjl_&authKey=HhWMVOFFvsxz9dDbNEfDPtyUvS%2BZ6E%2FiCSpZ7JLfsY2SBQe8eVToud%2FS3Eaz9lRW&noverify=0&group_code=702894538">
             <div class="item">
-              <div class="img-box box-2"></div>
+              <!-- 将背景图替换为img标签实现懒加载 -->
+              <div class="bg-img-container">
+                <img src="static/picture/telephone-white.webp" alt="电话图标" loading="lazy">
+              </div>
               <div class="detail-box">
                 <p>QQ群：702894538</p>
               </div>
@@ -365,7 +400,10 @@
           </a>
           <a href="https://www.mcdogserver.top">
             <div class="item">
-              <div class="img-box box-3"></div>
+              <!-- 将背景图替换为img标签实现懒加载 -->
+              <div class="bg-img-container">
+                <img src="static/picture/envelope-white.webp" alt="信封图标" loading="lazy">
+              </div>
               <div class="detail-box">
                 <p>官网：www.mcdogserver.top</p>
               </div>
@@ -420,6 +458,28 @@ id="12750073701"
 fixed="true">
 </meting-js>
 
+<script>
+  // 图片加载完成后添加loaded类
+  document.addEventListener('DOMContentLoaded', function() {
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.classList.add('loaded');
+          observer.unobserve(img);
+        }
+      });
+    }, {
+      rootMargin: '0px 0px 100px 0px' // 提前100px加载
+    });
+    
+    lazyImages.forEach(img => {
+      observer.observe(img);
+    });
+  });
+</script>
 
   </body>
 </html>
