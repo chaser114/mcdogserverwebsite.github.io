@@ -68,7 +68,7 @@
         /* 英雄区域 - 已将遮罩调暗 */
         .hero-area {
             min-height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
             background-position: center;
             background-size: cover;
             background-attachment: fixed;
@@ -77,6 +77,8 @@
             align-items: center;
             position: relative;
             color: #fff;
+            /* 平滑过渡效果 */
+            transition: background-image 1s ease-in-out;
         }
         
         .hero-content {
@@ -134,6 +136,7 @@
             background-attachment: fixed;
             background-repeat: no-repeat;
             color: #fff;
+            transition: background-image 1s ease-in-out;
         }
         
         .section-title {
@@ -208,6 +211,7 @@
             background-attachment: fixed;
             background-repeat: no-repeat;
             color: #fff;
+            transition: background-image 1s ease-in-out;
         }
         
         .team-member {
@@ -275,6 +279,7 @@
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
+            transition: background-image 1s ease-in-out;
         }
         
         .contact-form {
@@ -564,43 +569,57 @@
                 }
             });
 
-            // --- 背景图异步加载 (已修正) ---
+            // --- 背景图异步加载 (V2 - 已修正加载逻辑) ---
             const lazyBackgrounds = document.querySelectorAll('.lazy-bg');
+
+            // 定义一个可重用的加载函数
+            function loadAndApplyBg(lazyElement) {
+                const imageUrl = lazyElement.dataset.bg;
+                if (!imageUrl) return;
+
+                // 1. 创建一个临时的Image对象来预加载图片
+                const img = new Image();
+                
+                // 2. 当图片加载成功后，执行此函数
+                img.onload = function() {
+                    const existingStyle = getComputedStyle(lazyElement);
+                    const existingBgImage = existingStyle.backgroundImage;
+
+                    // 检查是否已有背景（比如我们的渐变遮罩）
+                    if (existingBgImage && existingBgImage !== 'none') {
+                        // 将新图片追加到现有背景的后面，实现遮罩效果
+                        lazyElement.style.backgroundImage = `${existingBgImage}, url('${imageUrl}')`;
+                    } else {
+                        // 如果没有，则直接设置图片
+                        lazyElement.style.backgroundImage = `url('${imageUrl}')`;
+                    }
+                };
+                
+                // 3. 启动加载。这行代码必须在`onload`事件处理器定义之后
+                img.src = imageUrl;
+            }
+
             if ('IntersectionObserver' in window) {
                 let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
                     entries.forEach(function(entry) {
+                        // 当元素进入视口时
                         if (entry.isIntersecting) {
                             const lazyElement = entry.target;
-                            const imageUrl = lazyElement.dataset.bg;
-                            const existingStyle = getComputedStyle(lazyElement);
-                            const existingBgImage = existingStyle.backgroundImage;
-
-                            // 关键修正: 将渐变遮罩(existingBgImage)放在图片(url)前面，确保遮罩在上层
-                            if (existingBgImage && existingBgImage !== 'none') {
-                                lazyElement.style.backgroundImage = `${existingBgImage}, url('${imageUrl}')`;
-                            } else {
-                                lazyElement.style.backgroundImage = `url('${imageUrl}')`;
-                            }
-                            
-                            lazyBackgroundObserver.unobserve(lazyElement);
+                            // 调用我们的加载函数
+                            loadAndApplyBg(lazyElement);
+                            // 停止观察此元素，避免重复加载
+                            observer.unobserve(lazyElement);
                         }
                     });
-                }, { rootMargin: "0px 0px 200px 0px" });
+                }, { rootMargin: "0px 0px 200px 0px" }); // 提前200px开始加载
 
                 lazyBackgrounds.forEach(function(lazyBackground) {
                     lazyBackgroundObserver.observe(lazyBackground);
                 });
             } else {
-                // 后备方案
+                // 为不支持IntersectionObserver的旧浏览器提供后备方案
                 lazyBackgrounds.forEach(function(lazyBackground) {
-                    const imageUrl = lazyBackground.dataset.bg;
-                    const existingStyle = getComputedStyle(lazyBackground);
-                    const existingBgImage = existingStyle.backgroundImage;
-                    if (existingBgImage && existingBgImage !== 'none') {
-                        lazyBackground.style.backgroundImage = `${existingBgImage}, url('${imageUrl}')`;
-                    } else {
-                        lazyBackground.style.backgroundImage = `url('${imageUrl}')`;
-                    }
+                    loadAndApplyBg(lazyBackground);
                 });
             }
         });
