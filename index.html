@@ -8,10 +8,10 @@
     <meta name="google-adsense-account" content="ca-pub-1444555594148382">
     
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/css/all.min.css">
     
     <style>
         :root {
@@ -65,7 +65,7 @@
             width: 100%;
         }
         
-        /* 英雄区域 (背景图已改为JS加载) - 已将遮罩调暗 */
+        /* 英雄区域 - 已将遮罩调暗 */
         .hero-area {
             min-height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
@@ -125,7 +125,7 @@
             transform: translateY(-3px);
         }
         
-        /* 功能区域 (背景图已改为JS加载) */
+        /* 功能区域 */
         .features-section {
             padding: 100px 0;
             background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
@@ -199,7 +199,7 @@
             color: var(--primary);
         }
         
-        /* 团队区域 (背景图已改为JS加载) */
+        /* 团队区域 */
         .team-section {
             padding: 100px 0;
             background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
@@ -268,7 +268,6 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
-        /* 联系区域图片 (背景图已改为JS加载) */
         .contact-img {
             flex: 1;
             min-height: 400px;
@@ -391,71 +390,29 @@
             .hero-content h1 {
                 font-size: 2.8rem;
             }
-            
-            .hero-content h2 {
-                font-size: 2rem;
-            }
-            
-            .contact-container {
-                flex-direction: column;
-            }
-            
-            .contact-img {
-                min-height: 300px;
-                width: 100%;
-            }
+            .hero-content h2 { font-size: 2rem; }
+            .contact-container { flex-direction: column; }
+            .contact-img { min-height: 300px; width: 100%; }
         }
         
         @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-            
-            .feature-card {
-                margin-bottom: 30px;
-            }
-            
-            .member-img {
-                width: 180px;
-                height: 180px;
-            }
+            .hero-content h1 { font-size: 2.2rem; }
+            .section-title h2 { font-size: 2.2rem; }
+            .feature-card { margin-bottom: 30px; }
+            .member-img { width: 180px; height: 180px; }
         }
         
         /* 动画效果 */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
-        .animate {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-        
-        .delay-1 {
-            animation-delay: 0.2s;
-        }
-        
-        .delay-2 {
-            animation-delay: 0.4s;
-        }
-        
-        .delay-3 {
-            animation-delay: 0.6s;
-        }
-        
-        .delay-4 {
-            animation-delay: 0.8s;
-        }
+        .animate { animation: fadeInUp 0.8s ease forwards; }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
     </style>
 </head>
 <body>
@@ -470,18 +427,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">主页</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=4BOH3Fg3Fjub6Sh7TKn-vsKkg2eyQjl_&authKey=HhWMVOFFvsxz9dDbNEfDPtyUvS%2BZ6E%2FiCSpZ7JLfsY2SBQe8eVToud%2FS3Eaz9lRW&noverify=0&group_code=702894538">加入Q群</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://b2.mcdogserver.top/mc%E5%AE%A2%E6%88%B7%E7%AB%AF.7z">客户端下载</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="old_index.html">回到旧版</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="#">主页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=4BOH3Fg3Fjub6Sh7TKn-vsKkg2eyQjl_&authKey=HhWMVOFFvsxz9dDbNEfDPtyUvS%2BZ6E%2FiCSpZ7JLfsY2SBQe8eVToud%2FS3Eaz9lRW&noverify=0&group_code=702894538">加入Q群</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://b2.mcdogserver.top/mc%E5%AE%A2%E6%88%B7%E7%AB%AF.7z">客户端下载</a></li>
+                    <li class="nav-item"><a class="nav-link" href="old_index.html">回到旧版</a></li>
                 </ul>
             </div>
         </div>
@@ -493,9 +442,7 @@
             <div class="hero-content">
                 <h1 class="animate">mcdogserver</h1>
                 <h2 class="animate delay-1">1.9 - 1.21 版本支持</h2>
-                <p class="animate delay-2">
-                    mcdogserver是一个纯生存服务器。在服务器中可以随意的建造生存等等(除了炸图开挂)
-                </p>
+                <p class="animate delay-2">mcdogserver是一个纯生存服务器。在服务器中可以随意的建造生存等等(除了炸图开挂)</p>
                 <a href="https://easylink.cc/j673hk" class="btn btn-hero animate delay-3">下载客户端</a>
             </div>
         </div>
@@ -507,47 +454,11 @@
             <div class="section-title animate">
                 <h2>为什么玩mcdogserver</h2>
             </div>
-            
             <div class="row">
-                <div class="col-lg-3 col-md-6 animate delay-1">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <img src="static/picture/u-1.webp" alt="功能图标">
-                        </div>
-                        <h3>功能丰富</h3>
-                        <p>有tpa互传,并且有登录插件保护你的账号</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 animate delay-2">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <img src="static/picture/u-4.webp" alt="民主图标">
-                        </div>
-                        <h3>民主管理</h3>
-                        <p>管理员应触发服务器规则被撤销时可在群内投票选出新的管理员</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 animate delay-3">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <img src="static/picture/u-2.webp" alt="管理图标">
-                        </div>
-                        <h3>高效管理</h3>
-                        <p>当遇到外挂时，可以在群内反馈，保证7天内完成判断(除反馈太多外)</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 animate delay-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <img src="static/picture/u-3.webp" alt="安全图标">
-                        </div>
-                        <h3>安全保障</h3>
-                        <p>拥有反作弊保护服务器不会影响正常玩家的游玩</p>
-                    </div>
-                </div>
+                <div class="col-lg-3 col-md-6 animate delay-1"><div class="feature-card"><div class="feature-icon"><img src="static/picture/u-1.webp" alt="功能图标"></div><h3>功能丰富</h3><p>有tpa互传,并且有登录插件保护你的账号</p></div></div>
+                <div class="col-lg-3 col-md-6 animate delay-2"><div class="feature-card"><div class="feature-icon"><img src="static/picture/u-4.webp" alt="民主图标"></div><h3>民主管理</h3><p>管理员应触发服务器规则被撤销时可在群内投票选出新的管理员</p></div></div>
+                <div class="col-lg-3 col-md-6 animate delay-3"><div class="feature-card"><div class="feature-icon"><img src="static/picture/u-2.webp" alt="管理图标"></div><h3>高效管理</h3><p>当遇到外挂时，可以在群内反馈，保证7天内完成判断(除反馈太多外)</p></div></div>
+                <div class="col-lg-3 col-md-6 animate delay-4"><div class="feature-card"><div class="feature-icon"><img src="static/picture/u-3.webp" alt="安全图标"></div><h3>安全保障</h3><p>拥有反作弊保护服务器不会影响正常玩家的游玩</p></div></div>
             </div>
         </div>
     </section>
@@ -558,47 +469,11 @@
             <div class="section-title animate">
                 <h2>我们的团队</h2>
             </div>
-            
             <div class="row">
-                <div class="col-lg-3 col-md-6 animate delay-1">
-                    <div class="team-member">
-                        <div class="member-img">
-                            <img src="static/picture/louis.webp" alt="louis">
-                        </div>
-                        <h3 class="member-name">louis</h3>
-                        <p class="member-role">创始人 & 管理员</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 animate delay-2">
-                    <div class="team-member">
-                        <div class="member-img">
-                            <img src="static/picture/worldcctv48.webp" alt="worldcctv48">
-                        </div>
-                        <h3 class="member-name">worldcctv48</h3>
-                        <p class="member-role">技术负责人</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 animate delay-3">
-                    <div class="team-member">
-                        <div class="member-img">
-                            <img src="static/picture/tolesam.webp" alt="tolesam">
-                        </div>
-                        <h3 class="member-name">tolesam</h3>
-                        <p class="member-role">社区经理</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 animate delay-4">
-                    <div class="team-member">
-                        <div class="member-img">
-                            <img src="static/picture/xylophone.webp" alt="xylophone">
-                        </div>
-                        <h3 class="member-name">xylophone</h3>
-                        <p class="member-role">内容创作者</p>
-                    </div>
-                </div>
+                <div class="col-lg-3 col-md-6 animate delay-1"><div class="team-member"><div class="member-img"><img src="static/picture/louis.webp" alt="louis"></div><h3 class="member-name">louis</h3><p class="member-role">创始人 & 管理员</p></div></div>
+                <div class="col-lg-3 col-md-6 animate delay-2"><div class="team-member"><div class="member-img"><img src="static/picture/worldcctv48.webp" alt="worldcctv48"></div><h3 class="member-name">worldcctv48</h3><p class="member-role">技术负责人</p></div></div>
+                <div class="col-lg-3 col-md-6 animate delay-3"><div class="team-member"><div class="member-img"><img src="static/picture/tolesam.webp" alt="tolesam"></div><h3 class="member-name">tolesam</h3><p class="member-role">社区经理</p></div></div>
+                <div class="col-lg-3 col-md-6 animate delay-4"><div class="team-member"><div class="member-img"><img src="static/picture/xylophone.webp" alt="xylophone"></div><h3 class="member-name">xylophone</h3><p class="member-role">内容创作者</p></div></div>
             </div>
         </div>
     </section>
@@ -611,12 +486,9 @@
                 <div class="contact-form">
                     <h2>加入我们</h2>
                     <div class="contact-buttons">
-                        <a href="https://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=4BOH3Fg3Fjub6Sh7TKn-vsKkg2eyQjl_&authKey=HhWMVOFFvsxz9dDbNEfDPtyUvS%2BZ6E%2FiCSpZ7JLfsY2SBQe8eVToud%2FS3Eaz9lRW&noverify=0&group_code=702894538" 
-                           class="btn-contact" target="_blank">加入Q群</a>
-                        <a href="https://easylink.cc/j673hk" 
-                           class="btn-contact" target="_blank">下载客户端</a>
-                        <a href="https://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=4BOH3Fg3Fjub6Sh7TKn-vsKkg2eyQjl_&authKey=HhWMVOFFvsxz9dDbNEfDPtyUvS%2BZ6E%2FiCSpZ7JLfsY2SBQe8eVToud%2FS3Eaz9lRW&noverify=0&group_code=702894538" 
-                           class="btn-contact" target="_blank">举报外挂</a>
+                        <a href="https://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=4BOH3Fg3Fjub6Sh7TKn-vsKkg2eyQjl_&authKey=HhWMVOFFvsxz9dDbNEfDPtyUvS%2BZ6E%2FiCSpZ7JLfsY2SBQe8eVToud%2FS3Eaz9lRW&noverify=0&group_code=702894538" class="btn-contact" target="_blank">加入Q群</a>
+                        <a href="https://easylink.cc/j673hk" class="btn-contact" target="_blank">下载客户端</a>
+                        <a href="https://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=4BOH3Fg3Fjub6Sh7TKn-vsKkg2eyQjl_&authKey=HhWMVOFFvsxz9dDbNEfDPtyUvS%2BZ6E%2FiCSpZ7JLfsY2SBQe8eVToud%2FS3Eaz9lRW&noverify=0&group_code=702894538" class="btn-contact" target="_blank">举报外挂</a>
                     </div>
                 </div>
             </div>
@@ -627,32 +499,9 @@
     <section class="info-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <img src="static/picture/location-white.webp" alt="位置图标">
-                        </div>
-                        <p class="info-text">IP: mc.mcdogserver.top</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <img src="static/picture/telephone-white.webp" alt="电话图标">
-                        </div>
-                        <p class="info-text">QQ群: 702894538</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <img src="static/picture/envelope-white.webp" alt="信封图标">
-                        </div>
-                        <p class="info-text">官网: www.mcdogserver.top</p>
-                    </div>
-                </div>
+                <div class="col-md-4"><div class="info-item"><div class="info-icon"><img src="static/picture/location-white.webp" alt="位置图标"></div><p class="info-text">IP: mc.mcdogserver.top</p></div></div>
+                <div class="col-md-4"><div class="info-item"><div class="info-icon"><img src="static/picture/telephone-white.webp" alt="电话图标"></div><p class="info-text">QQ群: 702894538</p></div></div>
+                <div class="col-md-4"><div class="info-item"><div class="info-icon"><img src="static/picture/envelope-white.webp" alt="信封图标"></div><p class="info-text">官网: www.mcdogserver.top</p></div></div>
             </div>
         </div>
     </section>
@@ -660,46 +509,31 @@
     <!-- 页脚 -->
     <footer class="footer">
         <div class="container text-center">
-            <p>
-                <a href="https://icp.mcsite.cc/mc/0000000010.html" title="MCICP备0000000010号" target="_blank">MCICP备0000000010号</a>
-            </p>
+            <p><a href="https://icp.mcsite.cc/mc/0000000010.html" title="MCICP备0000000010号" target="_blank">MCICP备0000000010号</a></p>
             <p class="runtime" id="runtime">本网站已运行: 0天 0小时 0分 0秒</p>
-            <p>
-                友情链接: <a href="https://www.locyanfrp.cn/" target="_blank" rel="noreferrer noopener">乐青映射</a>
-            </p>
-            <p class="footer-links">
-                <a href="#">关于我们</a> | 
-                <a href="#">服务条款</a> | 
-                <a href="#">隐私政策</a>
-            </p>
+            <p>友情链接: <a href="https://www.locyanfrp.cn/" target="_blank" rel="noreferrer noopener">乐青映射</a></p>
+            <p class="footer-links"><a href="#">关于我们</a> | <a href="#">服务条款</a> | <a href="#">隐私政策</a></p>
             <p>&copy; 2024 mcdogserver 团队. 保留所有权利.</p>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        // 网站运行时间计算
-        function updateRuntime() {
-            const startDate = new Date('2024-04-14T00:00:00');
-            const now = new Date();
-            const diff = now - startDate;
-            
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            document.getElementById('runtime').textContent = 
-                `本网站已运行: ${days}天 ${hours}小时 ${minutes}分 ${seconds}秒`;
-        }
-        
         document.addEventListener('DOMContentLoaded', function() {
-            // 初始更新运行时间
+            // 网站运行时间计算
+            function updateRuntime() {
+                const startDate = new Date('2024-04-14T00:00:00');
+                const now = new Date();
+                const diff = now - startDate;
+                const days = Math.floor(diff / (1000*60*60*24));
+                const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+                const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+                const seconds = Math.floor((diff % (1000*60)) / 1000);
+                document.getElementById('runtime').textContent = `本网站已运行: ${days}天 ${hours}小时 ${minutes}分 ${seconds}秒`;
+            }
             updateRuntime();
-            
-            // 每秒更新一次
             setInterval(updateRuntime, 1000);
             
             // 滚动淡入动画
@@ -712,13 +546,8 @@
                             observer.unobserve(entry.target);
                         }
                     });
-                }, {
-                    threshold: 0.1
-                });
-                
-                animateElements.forEach(el => {
-                   observer.observe(el);
-                });
+                }, { threshold: 0.1 });
+                animateElements.forEach(el => { observer.observe(el); });
             }
 
             // 导航栏滚动效果
@@ -735,7 +564,7 @@
                 }
             });
 
-            // 背景图异步加载
+            // --- 背景图异步加载 (已修正) ---
             const lazyBackgrounds = document.querySelectorAll('.lazy-bg');
             if ('IntersectionObserver' in window) {
                 let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
@@ -743,12 +572,12 @@
                         if (entry.isIntersecting) {
                             const lazyElement = entry.target;
                             const imageUrl = lazyElement.dataset.bg;
-                            
                             const existingStyle = getComputedStyle(lazyElement);
                             const existingBgImage = existingStyle.backgroundImage;
 
+                            // 关键修正: 将渐变遮罩(existingBgImage)放在图片(url)前面，确保遮罩在上层
                             if (existingBgImage && existingBgImage !== 'none') {
-                                lazyElement.style.backgroundImage = `url('${imageUrl}'), ${existingBgImage}`;
+                                lazyElement.style.backgroundImage = `${existingBgImage}, url('${imageUrl}')`;
                             } else {
                                 lazyElement.style.backgroundImage = `url('${imageUrl}')`;
                             }
@@ -762,9 +591,16 @@
                     lazyBackgroundObserver.observe(lazyBackground);
                 });
             } else {
+                // 后备方案
                 lazyBackgrounds.forEach(function(lazyBackground) {
-                     const imageUrl = lazyBackground.dataset.bg;
-                     lazyBackground.style.backgroundImage = `url('${imageUrl}')`;
+                    const imageUrl = lazyBackground.dataset.bg;
+                    const existingStyle = getComputedStyle(lazyBackground);
+                    const existingBgImage = existingStyle.backgroundImage;
+                    if (existingBgImage && existingBgImage !== 'none') {
+                        lazyBackground.style.backgroundImage = `${existingBgImage}, url('${imageUrl}')`;
+                    } else {
+                        lazyBackground.style.backgroundImage = `url('${imageUrl}')`;
+                    }
                 });
             }
         });
